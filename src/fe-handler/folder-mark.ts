@@ -73,6 +73,7 @@ export default class FolderMark extends FEHandler_Base {
   private initFolderMark() {
     const { vault, metadataCache } = this.app;
     this.markAll();
+    window.setTimeout(this.markAll, 20);
     // #region folder note events setup
     [
       vault.on("folder-note:create", (note: TFile, folder: TFolder) => {
